@@ -1,0 +1,68 @@
+#JSGF V1.0;
+
+grammar domain;
+
+public <domain> = <conversational> | <question> | <concept>;
+
+
+/* CONVERSATIONAL */
+<conversational> =  <greeting> | 
+                    <thankyou> | 
+                    <yesno> | 
+                    please;
+                    
+                    
+<greeting> = hello | hi | how are you | good morning | bye | good bye | bye bye;
+<thankyou> = thank you [very much]| thanks;
+<yesno> = yes | no;
+
+
+/* QUESTIONS*/
+<question> = <question1> | <question2> | <question3> | <question4> | <question5>;
+
+
+<question1> = ( [tell me] what is | <information>) the <housingprogram>;
+
+/* how can i renew the application for my type */
+<question2> = <howcani> renew (the|my) application for (<housingprogram> | <flat>);
+
+/* can i get a refund */
+<question3> =  [[<information>] <howcani> | <cani>]
+                (get | have) (a refund | my money back)
+                [for my (<housingprogram> | application)];
+
+
+/* how can i change housing program*/
+<question4> =  [ [<information>] <howcani> | <cani> ]
+               (transfer | change) <housingprogram>
+               [[different]  <flat>];
+
+
+/* how can i apply for housing program*/
+<question5> =   [ [<information>] <howcani> | <cani> ]
+                apply for (<housingprogram>|<flat>);
+
+
+/* CONCEPTS*/
+<concept> = <housingprogram> | family member | identification number | <flat> owner;
+
+
+
+<housingprogram> = two bedroom housing <program> |
+             big family housing <program> |
+             house for singles <program>;
+
+<flat> = flat | property | house ;
+<program> = program | scheme;
+
+/** OTHER **/
+<information> = i want to know about |
+                i want information |
+                i want to know |
+                information on;
+
+
+<iwant> = i want to | i d like to | i would like to;
+<howcani> = how can i | how do i | what do i have to do to;
+<cani> = can i;
+

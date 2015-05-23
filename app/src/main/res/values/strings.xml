@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ASR Demo</string>
+    <string name="imageBtn">microphone</string>
+</resources>
